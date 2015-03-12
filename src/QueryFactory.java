@@ -14,7 +14,7 @@
          *  returns the url parameter used to retrive airports 
          *  using http get besides the given base urls
          */
-        public static String getAirport() {
+        public static String getAirports() {
                 return "&list_type=airports";
         }
         
@@ -29,12 +29,12 @@
          * @param day used for specifying the day of departure
          */
          
-        public static String getDepartingFlight(String code, Date day) {
+        public static String getDepartingFlights(String code, Date day) {
                 String day = day.toString();
                 return "&list_type=departing&airport="+ code+ "&day="+ day;
         }
         
-        public static String getArrivingFlight(String code, Date day) {
+        public static String getArrivingFlights(String code, Date day) {
                 String day = day.toString();
                 return "&list_type=arriving&airport="+ code+ "&day="+ day;
         }
