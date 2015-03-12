@@ -1,4 +1,4 @@
-/** cs509 team: Tean 07
+/** cs509: Tean 07
  * Date: March 12. 2015
  * Description: Class used to instantiate an airplane
  * 				based on the information provided by the
