@@ -23,9 +23,11 @@
         }
         
         /** 
-         *
-         * @param code String and code used to
-         * @param day
+         * return the string as url string parameter 
+         * to retrieve departing flight from the cs server
+         * @param code refers to the airport code
+         * @param day used for specifying the day of departure
+         */
          
         public static String getDepartingFlight(String code, Date day) {
                 String day = day.toString();
