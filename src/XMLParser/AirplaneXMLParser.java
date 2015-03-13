@@ -5,7 +5,6 @@
  * 				a list of airplane objects.
  */
  
- import java.io.File; 
  import java.io.IOException; 
  import javax.xml.parsers.DocumentBuilder; 
  import javax.xml.parsers.DocumentBuilderFactory; 
@@ -15,6 +14,7 @@
  import org.w3c.dom.Node; 
  import org.w3c.dom.NodeList; 
  import org.xml.sax.SAXException; 
+ import org.xml.sax.InputSource;
  
 
  public class AirplaneXMLParser {
@@ -39,8 +39,10 @@
                DocumentBuilder builder = builderFactory.newDocumentBuilder(); 
                
                //parse an XML file into a DOM tree, in this case, change the filepath to xml String  
-               document = builder.parse(new File(filePath));
-               
+               //document = builder.parse(new File(filePath));
+                InputSource is = new InputSource();
+                is.setCharacterStream(new StringReader(new XMLLoader().getAirplanes()));
+                document.parse(is);
                //get root element, which is <Airports>
                Element rootElement = document.getDocumentElement(); 
       
@@ -60,8 +62,8 @@
                      NodeList airplaneChildren = airplane.getChildNodes();
                     
                      // value of longitude & latitude
-                     String firstClassSeats =  airplaneChildren.item(1).getTextContent();
-                     String coachSeats =  airplaneChildren.item(2).getTextContent();
+                     String firstClassSeats =  airplaneChildren.item(0).getTextContent();
+                     String coachSeats =  airplaneChildren.item(1).getTextContent();
 
                     airplaneList.add(new Airplane(model, manufacturer, firstClassSeats, coachSeats));
                   } 
