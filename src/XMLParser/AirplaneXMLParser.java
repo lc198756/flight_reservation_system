@@ -63,7 +63,7 @@
                      String firstClassSeats =  airplaneChildren.item(1).getTextContent();
                      String coachSeats =  airplaneChildren.item(2).getTextContent();
 
-                    airplaneList.add(new Airplane(model, manufacturer, firstClassSeats, coachSeats);
+                    airplaneList.add(new Airplane(model, manufacturer, firstClassSeats, coachSeats));
                   } 
                } 
     
